@@ -1,0 +1,69 @@
+[gd_scene load_steps=15 format=3 uid="uid://dmdyxwa2sca0d"]
+
+[ext_resource type="Texture2D" uid="uid://bd5h6q3f8428h" path="res://Art/Environment/Doodads/Rocks/ghostrock.png" id="1_575jd"]
+[ext_resource type="Texture2D" uid="uid://cmnxpet61hxuj" path="res://Art/Environment/Doodads/Rocks/rock1.png" id="2_8gx1c"]
+[ext_resource type="Texture2D" uid="uid://cewbef2djsj47" path="res://Art/Environment/Doodads/Rocks/rock3.png" id="3_y5hxi"]
+[ext_resource type="Texture2D" uid="uid://bkd6vo7ociat3" path="res://Art/Environment/Doodads/Rocks/rock4.png" id="4_er8qx"]
+[ext_resource type="Texture2D" uid="uid://bgeydtitbyhej" path="res://Art/Environment/Doodads/Rocks/rock5.png" id="5_jivva"]
+[ext_resource type="Texture2D" uid="uid://d2xt6mb70guaf" path="res://Art/Environment/Doodads/Rocks/rock6.png" id="6_hnytc"]
+[ext_resource type="Texture2D" uid="uid://dq1o36a7jcuw6" path="res://Art/Environment/Doodads/Rocks/rock7.png" id="7_yureg"]
+[ext_resource type="Texture2D" uid="uid://c3nv0uandgkna" path="res://Art/Environment/Doodads/Rocks/rock8.png" id="8_6o7ov"]
+[ext_resource type="Texture2D" uid="uid://vskucp5bvxuk" path="res://Art/Environment/Doodads/Rocks/rock9.png" id="9_7th1q"]
+[ext_resource type="Texture2D" uid="uid://d3sfkltxoa70e" path="res://Art/Environment/Doodads/Rocks/rock10.png" id="10_mucrr"]
+[ext_resource type="Texture2D" uid="uid://cx1vw3p5jf616" path="res://Art/Environment/Doodads/Rocks/rock11.png" id="11_6ty6n"]
+[ext_resource type="Texture2D" uid="uid://iyaoeu0fnmy7" path="res://Art/Environment/Doodads/Rocks/skullrock1.png" id="12_s4o3v"]
+[ext_resource type="Texture2D" uid="uid://3fxhnd8cnkjh" path="res://Art/Environment/Doodads/Rocks/skullrock2.png" id="13_2yxlw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqkud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_575jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8gx1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y5hxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_er8qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jivva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hnytc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yureg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6o7ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7th1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mucrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6ty6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s4o3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2yxlw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RockArt" type="AnimatedSprite2D"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(0, -107)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hqkud")

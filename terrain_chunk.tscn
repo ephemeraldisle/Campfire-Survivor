@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://d11f2rdp16gv6"]
+
+[ext_resource type="Script" path="res://terrain_chunk.gd" id="1_rao15"]
+[ext_resource type="PackedScene" uid="uid://bxyvf0gtcm15c" path="res://rock_test.tscn" id="4_c24mx"]
+[ext_resource type="Texture2D" uid="uid://chyuyny8f0chw" path="res://Scenes/another grab.png" id="5_bac6f"]
+[ext_resource type="PackedScene" uid="uid://dagr3audd8ef4" path="res://pickup_spawner.tscn" id="6_e14s8"]
+[ext_resource type="PackedScene" uid="uid://bj2pp4lx1twep" path="res://tree_test.tscn" id="10_osbku"]
+[ext_resource type="PackedScene" uid="uid://dq2ffiyawg8aq" path="res://bush_test.tscn" id="14_wo2g8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qq4e"]
+radius = 1000.0
+
+[node name="TerrainChunk" type="Node2D" groups=["objectholder"]]
+process_mode = 3
+script = ExtResource("1_rao15")
+
+[node name="RockTest" parent="." instance=ExtResource("4_c24mx")]
+unique_name_in_owner = true
+process_mode = 3
+position = Vector2(-392, 51)
+
+[node name="AnotherGrab" type="Sprite2D" parent="RockTest"]
+process_mode = 3
+visible = false
+texture = ExtResource("5_bac6f")
+
+[node name="BushTest" parent="." instance=ExtResource("14_wo2g8")]
+unique_name_in_owner = true
+process_mode = 3
+position = Vector2(-220, -82)
+
+[node name="AnotherGrab" type="Sprite2D" parent="BushTest"]
+process_mode = 3
+visible = false
+texture = ExtResource("5_bac6f")
+
+[node name="TreeTest" parent="." instance=ExtResource("10_osbku")]
+unique_name_in_owner = true
+process_mode = 3
+position = Vector2(363, -118)
+
+[node name="AnotherGrab" type="Sprite2D" parent="TreeTest"]
+process_mode = 3
+visible = false
+texture = ExtResource("5_bac6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0qq4e")
+disabled = true
+
+[node name="PickupSpawner" parent="." instance=ExtResource("6_e14s8")]
+position = Vector2(390, 410)

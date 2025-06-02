@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilityUnlocker" load_steps=4 format=3 uid="uid://cio0t8sgkmvv0"]
+
+[ext_resource type="PackedScene" uid="uid://qfdv38rf7ksr" path="res://Scenes/Components/Player/slingshot_controller.tscn" id="1_o0jth"]
+[ext_resource type="Texture2D" uid="uid://b7t6x34m6yu11" path="res://Art/HUD/slingshot pin.png" id="2_cgo2m"]
+[ext_resource type="Script" path="res://upgrades/ability_unlocker.gd" id="2_o34ga"]
+
+[resource]
+script = ExtResource("2_o34ga")
+ability_controller_scene = ExtResource("1_o0jth")
+id = "slingshot"
+icon = ExtResource("2_cgo2m")
+max_quantity = 1
+name = "Slingshot"
+description = "Shoots rocks at your cursor."

@@ -1,0 +1,26 @@
+[gd_scene load_steps=16 format=3 uid="uid://dh3j4em1qoyom"]
+
+[ext_resource type="Script" path="res://RockPlacer.gd" id="1_kchr0"]
+[ext_resource type="PackedScene" uid="uid://difiw58j7iga6" path="res://Scenes/Environment/Rocks/rock1.tscn" id="2_xm3gh"]
+[ext_resource type="PackedScene" uid="uid://dx4ajr3rhkbr3" path="res://Scenes/Environment/Rocks/rock2.tscn" id="3_b20tg"]
+[ext_resource type="PackedScene" uid="uid://pxnbifwrwycd" path="res://Scenes/Environment/Rocks/rock3.tscn" id="4_uo3yh"]
+[ext_resource type="PackedScene" uid="uid://djiy7qg3cjnww" path="res://Scenes/Environment/Rocks/rock4.tscn" id="5_swtis"]
+[ext_resource type="PackedScene" uid="uid://deglhjxjr1p74" path="res://Scenes/Environment/Rocks/rock5.tscn" id="6_lqi2i"]
+[ext_resource type="PackedScene" uid="uid://dtxv14ocu3cud" path="res://Scenes/Environment/Rocks/rock6.tscn" id="7_0txjj"]
+[ext_resource type="PackedScene" uid="uid://wa6wok8itiqi" path="res://Scenes/Environment/Rocks/rock7.tscn" id="8_5ug1y"]
+[ext_resource type="PackedScene" uid="uid://dqtko03yi8dk4" path="res://Scenes/Environment/Rocks/rock8.tscn" id="9_xcmra"]
+[ext_resource type="PackedScene" uid="uid://daac6m0p7isir" path="res://Scenes/Environment/Rocks/rock9.tscn" id="10_rcoh7"]
+[ext_resource type="PackedScene" uid="uid://gsj8tph8fm8d" path="res://Scenes/Environment/Rocks/rock10.tscn" id="11_p70pi"]
+[ext_resource type="PackedScene" uid="uid://cfb7crx53nue6" path="res://Scenes/Environment/Rocks/rock11.tscn" id="12_xbljv"]
+[ext_resource type="PackedScene" uid="uid://sl20d2v8gf71" path="res://Scenes/Environment/Rocks/rock12.tscn" id="13_7t15n"]
+[ext_resource type="PackedScene" uid="uid://bqr81fsvj45it" path="res://Scenes/Environment/Rocks/rock.tscn" id="14_lsiwn"]
+[ext_resource type="Texture2D" uid="uid://cofrtb5muupnx" path="res://Art/heat inner.png" id="15_7ctyl"]
+
+[node name="RockPlacer" type="Node2D"]
+script = ExtResource("1_kchr0")
+rocks = Array[PackedScene]([ExtResource("2_xm3gh"), ExtResource("3_b20tg"), ExtResource("4_uo3yh"), ExtResource("5_swtis"), ExtResource("6_lqi2i"), ExtResource("7_0txjj"), ExtResource("8_5ug1y"), ExtResource("9_xcmra"), ExtResource("10_rcoh7"), ExtResource("11_p70pi"), ExtResource("12_xbljv"), ExtResource("13_7t15n"), ExtResource("14_lsiwn")])
+
+[node name="HeatInner" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2, 6)
+texture = ExtResource("15_7ctyl")

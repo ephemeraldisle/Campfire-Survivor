@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3bnx2v07k7me"]
+
+[ext_resource type="PackedScene" uid="uid://cd0jbh4metflb" path="res://addons/maaacks_menus_template/base/scenes/LoadingScreen/LoadingScreen.tscn" id="1_ip8fd"]
+[ext_resource type="Script" path="res://menu stuff/scenes/LoadingScreen/LoadingScreen.gd" id="2_mq6f0"]
+[ext_resource type="Theme" uid="uid://dfjxxhmug6bi2" path="res://Scenes/mytheme.tres" id="3_mwbxx"]
+
+[node name="LoadingScreen" instance=ExtResource("1_ip8fd")]
+script = ExtResource("2_mq6f0")
+
+[node name="BackPanel" parent="Control" index="0"]
+theme = ExtResource("3_mwbxx")
+
+[node name="Label2" type="Label" parent="." index="2"]
+offset_left = 111.0
+offset_top = 620.0
+offset_right = 872.0
+offset_bottom = 832.0
+theme = ExtResource("3_mwbxx")
+text = "COLLECT WOOD
+PUT WOOD IN FIRE
+GET WEAPON AND GET STRONGER
+RIGHT CLICK TO DASH
+YOU CAN DO THIS <3"

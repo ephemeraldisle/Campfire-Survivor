@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://by7r44qmnrftc"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_50bcr"]
+polygon = PackedVector2Array(-5, 70, -48, 68, -75, 63, -74, 39, -69, 8, -65, -11, -43, -22, -27, -28, -7, -28, 15, -30, 31, -26, 50, -20, 55, -6, 61, 39, 62, 61, 31, 68)
+
+[node name="LightOccluder2D" type="LightOccluder2D"]
+show_behind_parent = true
+light_mask = 2
+z_index = -3
+y_sort_enabled = true
+position = Vector2(4, -71)
+occluder = SubResource("OccluderPolygon2D_50bcr")

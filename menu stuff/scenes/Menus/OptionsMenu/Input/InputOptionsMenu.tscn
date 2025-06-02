@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ghynymq3vofr"]
+
+[ext_resource type="PackedScene" uid="uid://dp3rgqaehb3xu" path="res://addons/maaacks_menus_template/base/scenes/Menus/OptionsMenu/Input/InputOptionsMenu.tscn" id="1_n73r0"]
+[ext_resource type="Theme" uid="uid://dfjxxhmug6bi2" path="res://Scenes/mytheme.tres" id="2_fa76m"]
+[ext_resource type="Script" path="res://menu stuff/scenes/Menus/OptionsMenu/Input/InputOptionsMenu.gd" id="2_tyxwl"]
+
+[node name="Controls" instance=ExtResource("1_n73r0")]
+size_flags_horizontal = 6
+theme = ExtResource("2_fa76m")
+script = ExtResource("2_tyxwl")
+
+[node name="VBoxContainer" parent="." index="0"]
+size_flags_horizontal = 1
+
+[node name="KeyAssignmentDialog" parent="." index="1"]
+theme = ExtResource("2_fa76m")

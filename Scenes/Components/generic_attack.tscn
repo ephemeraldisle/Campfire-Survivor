@@ -1,0 +1,45 @@
+[gd_scene load_steps=12 format=3 uid="uid://plbi7ul1xxsd"]
+
+[ext_resource type="Script" path="res://Scenes/Components/generic_attack.gd" id="1_lcub2"]
+[ext_resource type="PackedScene" uid="uid://8khcq8ovwsh5" path="res://Scenes/Components/generic_audio_player.tscn" id="2_85ddh"]
+[ext_resource type="PackedScene" uid="uid://bu2fvu1viccsn" path="res://hit_indicator.tscn" id="2_ckw4f"]
+[ext_resource type="PackedScene" uid="uid://cu06kjlk12kc" path="res://hit_explosion_holder.tscn" id="3_inth1"]
+[ext_resource type="AudioStream" uid="uid://c7f8o1fak8c3v" path="res://Sounds/hit 1.mp3" id="3_m4nam"]
+[ext_resource type="PackedScene" uid="uid://cej11p4dm5yqh" path="res://generichitbox.tscn" id="4_072ls"]
+[ext_resource type="AudioStream" uid="uid://1cn2pafre4gh" path="res://Sounds/hit 2.mp3" id="4_twpji"]
+[ext_resource type="AudioStream" uid="uid://bk81xadoa1jba" path="res://Sounds/hit 3.mp3" id="5_q586o"]
+[ext_resource type="AudioStream" uid="uid://daetoga7f1mfh" path="res://Sounds/powerup.mp3" id="6_hw8ov"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_so44b"]
+playback_mode = 1
+random_pitch = 1.05
+streams_count = 3
+stream_0/stream = ExtResource("3_m4nam")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_twpji")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_q586o")
+stream_2/weight = 1.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8rwxp"]
+
+[node name="GenericAttack" type="Node2D"]
+script = ExtResource("1_lcub2")
+hit_indicator = ExtResource("2_ckw4f")
+hit_effect = ExtResource("3_inth1")
+hitbox = ExtResource("4_072ls")
+
+[node name="HitSound" parent="." instance=ExtResource("2_85ddh")]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_so44b")
+
+[node name="WarmupSound" parent="." instance=ExtResource("2_85ddh")]
+unique_name_in_owner = true
+stream = ExtResource("6_hw8ov")
+volume_db = -1.625
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(11, 9)
+scale = Vector2(22, 19)
+texture = SubResource("PlaceholderTexture2D_8rwxp")

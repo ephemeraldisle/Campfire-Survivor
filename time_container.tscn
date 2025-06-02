@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://catd2frkp5eny"]
+
+[ext_resource type="Texture2D" uid="uid://b2427t0vw5njw" path="res://Art/time moon.png" id="1_aacwl"]
+[ext_resource type="Texture2D" uid="uid://dd456oqo4u8cs" path="res://Art/time moon3.png" id="1_cdd7d"]
+[ext_resource type="Texture2D" uid="uid://cr8gcgg6tb7ui" path="res://Art/HUD/other night.png" id="1_opykf"]
+[ext_resource type="Texture2D" uid="uid://b53himrqlx1l4" path="res://Art/timeunder.png" id="2_3vlyy"]
+[ext_resource type="Texture2D" uid="uid://bcp6kyar1x3ii" path="res://Art/timefill.png" id="3_fty7t"]
+[ext_resource type="Script" path="res://TimeProgressBar.gd" id="4_nrwwj"]
+[ext_resource type="Texture2D" uid="uid://yvsragmpna7r" path="res://Art/time sun.png" id="6_b0dh3"]
+[ext_resource type="Texture2D" uid="uid://bvtu5g4ygejst" path="res://Art/time moon1.png" id="6_doeqq"]
+
+[node name="TimeContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="TimeBadgeContainer" type="MarginContainer" parent="HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TimeProgressBar1" type="TextureProgressBar" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_under = ExtResource("1_cdd7d")
+texture_over = ExtResource("2_3vlyy")
+texture_progress = ExtResource("3_fty7t")
+script = ExtResource("4_nrwwj")
+
+[node name="TimeProgressBar2" type="TextureProgressBar" parent="HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_under = ExtResource("1_aacwl")
+texture_over = ExtResource("2_3vlyy")
+texture_progress = ExtResource("3_fty7t")
+script = ExtResource("4_nrwwj")
+
+[node name="TimeProgressBar3" type="TextureProgressBar" parent="HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_under = ExtResource("6_doeqq")
+texture_over = ExtResource("2_3vlyy")
+texture_progress = ExtResource("3_fty7t")
+script = ExtResource("4_nrwwj")
+
+[node name="TimeProgressBar4" type="TextureProgressBar" parent="HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_under = ExtResource("6_b0dh3")
+texture_over = ExtResource("2_3vlyy")
+texture_progress = ExtResource("3_fty7t")
+script = ExtResource("4_nrwwj")
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer"]
+visible = false
+position = Vector2(1235, 243)
+texture = ExtResource("1_opykf")

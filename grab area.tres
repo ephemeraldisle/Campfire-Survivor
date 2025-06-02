@@ -1,0 +1,16 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://hbb8jfjc5g55"]
+
+[ext_resource type="Texture2D" uid="uid://bowv1jhehkd5e" path="res://Scenes/horifill.png" id="1_6ms2g"]
+
+[resource]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_6ms2g")
+texture_margin_left = 14.0
+texture_margin_top = 6.0
+texture_margin_right = 14.0
+texture_margin_bottom = 6.0
+expand_margin_right = 15.0
+modulate_color = Color(0.878431, 0.584314, 0.192157, 1)

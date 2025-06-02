@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://daac6m0p7isir"]
+
+[ext_resource type="PackedScene" uid="uid://cyqyfdx5j8psk" path="res://shadow.tscn" id="1_06nwg"]
+[ext_resource type="PackedScene" uid="uid://dmdyxwa2sca0d" path="res://rock_art.tscn" id="2_v5sb0"]
+[ext_resource type="PackedScene" uid="uid://by7r44qmnrftc" path="res://rock_occluder.tscn" id="3_3fudy"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p1ywy"]
+polygon = PackedVector2Array(29.766, 68.8, -28.234, 75.8, -64.234, 61.8, -99.234, 29.8, -101.234, -2.2, -81.234, -18.2, 4.76599, -5.2, 43.766, -21.2, 34.766, 49.8)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjbhe"]
+radius = 50.0
+height = 170.0
+
+[node name="Rock9" type="StaticBody2D"]
+light_mask = 0
+visibility_layer = 2
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 0
+
+[node name="Shadow" parent="." instance=ExtResource("1_06nwg")]
+position = Vector2(-57, 1)
+scale = Vector2(15.4339, -3.89409)
+
+[node name="RockArt" parent="." instance=ExtResource("2_v5sb0")]
+z_index = 0
+position = Vector2(-15, -73)
+scale = Vector2(0.475, 0.475)
+frame = 9
+
+[node name="LightOccluder2D" parent="." instance=ExtResource("3_3fudy")]
+position = Vector2(7.23401, -71.8)
+occluder = SubResource("OccluderPolygon2D_p1ywy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-18, -42)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_kjbhe")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq2ffiyawg8aq"]
+
+[ext_resource type="Script" path="res://testing.gd" id="1_cjk6a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gh05u"]
+radius = 50.68
+
+[node name="BushTest" type="ShapeCast2D"]
+position = Vector2(80, -41)
+shape = SubResource("CircleShape2D_gh05u")
+target_position = Vector2(0, 0)
+collision_mask = 4
+script = ExtResource("1_cjk6a")

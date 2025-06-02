@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://8khcq8ovwsh5"]
+
+[node name="GenericAudioPlayer" type="AudioStreamPlayer2D"]
+attenuation = 0.203063
+max_polyphony = 8
+bus = &"Sounds"

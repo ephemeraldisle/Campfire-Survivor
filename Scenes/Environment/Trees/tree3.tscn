@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://o7lyk0lr7n84"]
+
+[ext_resource type="PackedScene" uid="uid://cyqyfdx5j8psk" path="res://shadow.tscn" id="1_hxfsx"]
+[ext_resource type="PackedScene" uid="uid://dppsgsovtwp6n" path="res://tree_art.tscn" id="2_cgghe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjbhe"]
+radius = 38.0001
+height = 194.0
+
+[node name="Tree3" type="StaticBody2D"]
+light_mask = 0
+visibility_layer = 2
+collision_layer = 4
+collision_mask = 0
+
+[node name="Shadow" parent="." instance=ExtResource("1_hxfsx")]
+z_index = 0
+position = Vector2(-40, -3)
+scale = Vector2(16.7757, -1.5996)
+
+[node name="TreeArt" parent="." instance=ExtResource("2_cgghe")]
+y_sort_enabled = false
+position = Vector2(-16, -179)
+scale = Vector2(0.55, 0.55)
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-14, -30)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_kjbhe")

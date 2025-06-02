@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://boc6ftu1suyw"]
+
+[sub_resource type="Animation" id="Animation_puklv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.6245),
+"update": 0,
+"values": [Vector2(0.468, 0.468)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ticks:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.6245),
+"update": 0,
+"values": [Vector2(0.236022, 0.236022)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ticks2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.6245),
+"update": 0,
+"values": [Vector2(0.236022, 0.236022)]
+}
+
+[sub_resource type="Animation" id="Animation_c8o3o"]
+resource_name = "appear"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.35, 0.4),
+"transitions": PackedFloat32Array(1.6245, 4, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.6, 0.6), Vector2(0.383, 0.383), Vector2(0.468, 0.468)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ticks:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.35, 0.4),
+"transitions": PackedFloat32Array(1.6245, 4, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.3, 0.3), Vector2(0.166, 0.166), Vector2(0.236022, 0.236022)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ticks2:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.35, 0.4),
+"transitions": PackedFloat32Array(1.6245, 4, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.3, 0.3), Vector2(0.166, 0.166), Vector2(0.236022, 0.236022)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aqs17"]
+_data = {
+"RESET": SubResource("Animation_puklv"),
+"appear": SubResource("Animation_c8o3o")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_aqs17")
+}

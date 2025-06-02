@@ -1,0 +1,85 @@
+[gd_scene load_steps=16 format=3 uid="uid://bsyne0ptqk28k"]
+
+[ext_resource type="Texture2D" uid="uid://bdodgjmm1uw7x" path="res://Art/Environment/Doodads/Bushes/berries1.png" id="1_rab66"]
+[ext_resource type="Texture2D" uid="uid://bcad83v3lhibh" path="res://Art/Environment/Doodads/Bushes/berries2.png" id="2_x0kbo"]
+[ext_resource type="Texture2D" uid="uid://cnvn6cucdtic" path="res://Art/Environment/Doodads/Bushes/berries3.png" id="3_vgj4y"]
+[ext_resource type="Texture2D" uid="uid://cssyfn6a43d37" path="res://Art/Environment/Doodads/Bushes/berries4.png" id="4_hesmh"]
+[ext_resource type="Texture2D" uid="uid://c1f3gj4show3c" path="res://Art/Environment/Doodads/Bushes/bush1.png" id="5_eya0i"]
+[ext_resource type="Texture2D" uid="uid://c6tforn38cffx" path="res://Art/Environment/Doodads/Bushes/bush2.png" id="6_pb6i5"]
+[ext_resource type="Texture2D" uid="uid://so5sd313exk7" path="res://Art/Environment/Doodads/Bushes/bush4.png" id="7_x4rri"]
+[ext_resource type="Texture2D" uid="uid://bvq21vsqnv2jt" path="res://Art/Environment/Doodads/Bushes/bush5.png" id="8_4ebm5"]
+[ext_resource type="Texture2D" uid="uid://6r4piuw7d028" path="res://Art/Environment/Doodads/Bushes/bush6.png" id="9_ulc4w"]
+[ext_resource type="Texture2D" uid="uid://k12alpvtmm3f" path="res://Art/Environment/Doodads/Bushes/bush7.png" id="10_ic34e"]
+[ext_resource type="Texture2D" uid="uid://df2xdjsicu62g" path="res://Art/Environment/Doodads/Bushes/bush8.png" id="11_5y2fd"]
+[ext_resource type="Texture2D" uid="uid://dpr1e46p08pjt" path="res://Art/Environment/Doodads/Bushes/creepy root.png" id="12_6vfrx"]
+[ext_resource type="PackedScene" uid="uid://cyqyfdx5j8psk" path="res://shadow.tscn" id="13_c4icb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifxa1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rab66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x0kbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vgj4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hesmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eya0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pb6i5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x4rri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4ebm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ulc4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ic34e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5y2fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6vfrx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p16ay"]
+radius = 24.0
+height = 80.0
+
+[node name="Bush9" type="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(0, 2)
+collision_layer = 4
+collision_mask = 0
+
+[node name="BushArt" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(7, -22)
+scale = Vector2(0.263764, 0.263764)
+sprite_frames = SubResource("SpriteFrames_ifxa1")
+frame = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -18)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_p16ay")
+
+[node name="Shadow" parent="." instance=ExtResource("13_c4icb")]
+position = Vector2(-22, -1)
+scale = Vector2(7.97753, -2.75384)

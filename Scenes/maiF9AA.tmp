@@ -1,0 +1,176 @@
+[gd_scene load_steps=13 format=3 uid="uid://be053sy56ew8r"]
+
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_4dglu"]
+[ext_resource type="Texture2D" uid="uid://btkv42jwuyqeo" path="res://Art/Environment/Background/smear.png" id="1_nt5x0"]
+[ext_resource type="PackedScene" uid="uid://dlh4cikf0yl7f" path="res://Scenes/Components/Player/player_holder.tscn" id="1_rqyy0"]
+[ext_resource type="PackedScene" uid="uid://cmpr4pote6ksc" path="res://Scenes/generic_enemy.tscn" id="4_24q0u"]
+[ext_resource type="PackedScene" uid="uid://dagr3audd8ef4" path="res://pickup_spawner.tscn" id="5_4klrv"]
+[ext_resource type="PackedScene" uid="uid://2a71k4l8q5va" path="res://Scenes/campfire.tscn" id="5_weiw2"]
+[ext_resource type="PackedScene" uid="uid://bcry206ly6r0y" path="res://pickup_sticks.tscn" id="7_qtqhn"]
+[ext_resource type="PackedScene" uid="uid://d11f2rdp16gv6" path="res://terrain_chunk.tscn" id="9_oygfk"]
+[ext_resource type="PackedScene" uid="uid://dgomfs5x6uday" path="res://Scripts/upgrade_manager.tscn" id="11_gkm0j"]
+[ext_resource type="PackedScene" uid="uid://bbj8tnlu23r4j" path="res://Scenes/floaty_enemy.tscn" id="17_qmqj7"]
+[ext_resource type="PackedScene" uid="uid://b8583xq20vk7s" path="res://Scenes/stretchy_enemy.tscn" id="18_wh01s"]
+
+[sub_resource type="Environment" id="Environment_7hecg"]
+background_mode = 3
+ambient_light_energy = 11.3
+tonemap_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 2.09
+glow_strength = 1.08
+glow_bloom = 0.8
+fog_light_color = Color(0.121569, 0.12549, 0.113725, 1)
+fog_density = 0.0185
+
+[node name="Main" type="Node2D"]
+process_mode = 1
+y_sort_enabled = true
+script = ExtResource("1_4dglu")
+
+[node name="Background Art" type="Sprite2D" parent="."]
+light_mask = 2
+z_index = -5
+texture_repeat = 2
+position = Vector2(-177, -147)
+texture = ExtResource("1_nt5x0")
+region_enabled = true
+region_rect = Rect2(0, 0, 15590, 11030)
+
+[node name="Player Holder" parent="." instance=ExtResource("1_rqyy0")]
+position = Vector2(-26, 0)
+
+[node name="GenericEnemy" parent="." instance=ExtResource("4_24q0u")]
+position = Vector2(-611, 419)
+
+[node name="GenericEnemy6" parent="." instance=ExtResource("4_24q0u")]
+position = Vector2(-1277, 81)
+
+[node name="GenericEnemy7" parent="." instance=ExtResource("4_24q0u")]
+position = Vector2(-1662, 547)
+
+[node name="GenericEnemy2" parent="." instance=ExtResource("4_24q0u")]
+position = Vector2(3497, -4364)
+
+[node name="GenericEnemy3" parent="." instance=ExtResource("4_24q0u")]
+position = Vector2(4253, -4368)
+
+[node name="GenericEnemy4" parent="." instance=ExtResource("4_24q0u")]
+position = Vector2(3722, -5082)
+
+[node name="GenericEnemy5" parent="." instance=ExtResource("4_24q0u")]
+position = Vector2(6040, -4300)
+
+[node name="Campfire" parent="." instance=ExtResource("5_weiw2")]
+position = Vector2(-205, 62)
+
+[node name="PickupSpawner" parent="Campfire" instance=ExtResource("5_4klrv")]
+position = Vector2(308, -311)
+
+[node name="PickupSpawner2" parent="Campfire" instance=ExtResource("5_4klrv")]
+position = Vector2(247, 305)
+
+[node name="PickupSpawner3" parent="Campfire" instance=ExtResource("5_4klrv")]
+position = Vector2(450, -13)
+
+[node name="PickupSpawner4" parent="Campfire" instance=ExtResource("5_4klrv")]
+position = Vector2(-327, -280)
+
+[node name="PickupSticks" parent="Campfire" instance=ExtResource("7_qtqhn")]
+position = Vector2(655, -296)
+
+[node name="PickupSticks2" parent="Campfire" instance=ExtResource("7_qtqhn")]
+position = Vector2(615, -242)
+
+[node name="PickupSticks3" parent="Campfire" instance=ExtResource("7_qtqhn")]
+position = Vector2(615, -242)
+
+[node name="PickupSticks4" parent="Campfire" instance=ExtResource("7_qtqhn")]
+position = Vector2(615, -242)
+
+[node name="PickupSticks5" parent="Campfire" instance=ExtResource("7_qtqhn")]
+position = Vector2(615, -242)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0313726, 0.0313726, 0.0313726, 1)
+
+[node name="ObjectHolder" type="Node2D" parent="." groups=["objectholder"]]
+y_sort_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7hecg")
+
+[node name="FloatyEnemy" parent="." instance=ExtResource("17_qmqj7")]
+position = Vector2(1710, -296)
+
+[node name="FloatyEnemy2" parent="." instance=ExtResource("17_qmqj7")]
+position = Vector2(1945, 256)
+
+[node name="StetchyEnemy" parent="." instance=ExtResource("18_wh01s")]
+position = Vector2(-140, -749)
+
+[node name="StetchyEnemy2" parent="." instance=ExtResource("18_wh01s")]
+position = Vector2(-454, 858)
+
+[node name="TerrainChunk" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(-1562, 10)
+start_delay = 0.21
+
+[node name="TerrainChunk6" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(-2586, -1588)
+start_delay = 2.0
+
+[node name="TerrainChunk7" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(-1257, -2881)
+start_delay = 2.0
+
+[node name="TerrainChunk8" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(575, -2737)
+start_delay = 2.0
+
+[node name="TerrainChunk9" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(2407, -2162)
+start_delay = 2.0
+
+[node name="TerrainChunk10" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(2784, -384)
+start_delay = 2.0
+
+[node name="TerrainChunk11" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(2784, 1448)
+start_delay = 2.0
+
+[node name="TerrainChunk12" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(1222, 2454)
+start_delay = 2.0
+
+[node name="TerrainChunk13" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(-2100, 1825)
+start_delay = 2.0
+
+[node name="TerrainChunk14" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(-520, 3082)
+start_delay = 2.0
+
+[node name="TerrainChunk15" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(-3501, 226)
+start_delay = 2.0
+
+[node name="TerrainChunk2" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(-725, -1189)
+start_delay = 0.21
+
+[node name="TerrainChunk3" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(1040, -1100)
+start_delay = 0.21
+
+[node name="TerrainChunk4" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(1180, 652)
+start_delay = 0.21
+
+[node name="TerrainChunk5" parent="." instance=ExtResource("9_oygfk")]
+position = Vector2(-293, 1414)
+start_delay = 0.21
+
+[node name="UpgradeManager" parent="." instance=ExtResource("11_gkm0j")]

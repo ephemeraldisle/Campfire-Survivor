@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://qfdv38rf7ksr"]
+
+[ext_resource type="Script" path="res://Scenes/Components/Player/slingshot_controller.gd" id="1_xpybb"]
+[ext_resource type="PackedScene" uid="uid://dr8w3762dpyw" path="res://Scenes/Components/Player/slingshot_ability.tscn" id="2_sogl0"]
+
+[node name="SlingshotController" type="Node"]
+script = ExtResource("1_xpybb")
+slingshot_ability_scene = ExtResource("2_sogl0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true

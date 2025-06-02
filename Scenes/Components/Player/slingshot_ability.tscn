@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://dr8w3762dpyw"]
+
+[ext_resource type="Script" path="res://Scenes/Components/Player/slingshot_ability.gd" id="1_buiqr"]
+[ext_resource type="Texture2D" uid="uid://byvh87p1mevmx" path="res://Art/stolen explodey.png" id="2_x3bk3"]
+[ext_resource type="PackedScene" uid="uid://bvhbhlkmo5o3o" path="res://hitbox_component.tscn" id="3_t1le4"]
+
+[sub_resource type="Animation" id="Animation_vq7vi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_o6wyy"]
+resource_name = "new_animation"
+length = 0.5
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(3.24901, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.25, 0.25), Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xdkpn"]
+_data = {
+"RESET": SubResource("Animation_vq7vi"),
+"new_animation": SubResource("Animation_o6wyy")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ackn7"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ku28"]
+radius = 7.07107
+
+[node name="SlingshotAbility" type="Node2D"]
+script = ExtResource("1_buiqr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xdkpn")
+}
+autoplay = "new_animation"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.905882, 0.729412, 0.576471, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_x3bk3")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_t1le4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+visible = false
+shape = SubResource("CircleShape2D_ackn7")
+
+[node name="BreakBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakBox"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_2ku28")
+
+[connection signal="body_entered" from="BreakBox" to="." method="_on_break_box_body_entered"]

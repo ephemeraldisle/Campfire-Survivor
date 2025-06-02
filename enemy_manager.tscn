@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://de1og44dow6y0"]
+
+[ext_resource type="Script" path="res://EnemyManager.gd" id="1_5e6dp"]
+[ext_resource type="PackedScene" uid="uid://cmpr4pote6ksc" path="res://Scenes/generic_enemy.tscn" id="2_yu4ch"]
+[ext_resource type="PackedScene" uid="uid://b8583xq20vk7s" path="res://Scenes/stretchy_enemy.tscn" id="3_vh4sf"]
+[ext_resource type="PackedScene" uid="uid://bbj8tnlu23r4j" path="res://Scenes/floaty_enemy.tscn" id="4_4ejgk"]
+
+[node name="EnemyManager" type="Node"]
+script = ExtResource("1_5e6dp")
+basic_enemy_scene = ExtResource("2_yu4ch")
+stretchy_enemy_scene = ExtResource("3_vh4sf")
+floaty_enemy_scene = ExtResource("4_4ejgk")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+autostart = true

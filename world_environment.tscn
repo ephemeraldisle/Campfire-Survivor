@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cixbpd4a7ybb4"]
+
+[sub_resource type="Environment" id="Environment_7hecg"]
+background_mode = 3
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.86
+glow_strength = 0.61
+glow_mix = 0.575
+glow_bloom = 0.28
+glow_blend_mode = 1
+fog_light_color = Color(0.121569, 0.12549, 0.113725, 1)
+fog_density = 0.0185
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_7hecg")

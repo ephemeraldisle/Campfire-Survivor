@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu2fvu1viccsn"]
+
+[ext_resource type="PackedScene" uid="uid://8kuv4dnqwxku" path="res://hit_indicator_art.tscn" id="1_b3mpk"]
+[ext_resource type="Texture2D" uid="uid://0lrbmrn4rs8" path="res://Art/Environment/tree short.png" id="2_61pt8"]
+
+[node name="HitIndicator" type="Node2D"]
+
+[node name="HitIndicatorArt" parent="." instance=ExtResource("1_b3mpk")]
+position = Vector2(0, 15)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_61pt8")

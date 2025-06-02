@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://bhf63h8cnoc4"]
+
+[ext_resource type="Script" path="res://upgrades/ability_upgrade.gd" id="1_uxsn6"]
+
+[resource]
+script = ExtResource("1_uxsn6")
+id = "slingshot_damage"
+max_quantity = 3
+name = "Slingshot Damage"
+description = "Increases slingshot damage by 5."

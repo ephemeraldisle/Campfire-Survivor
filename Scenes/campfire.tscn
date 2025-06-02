@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://2a71k4l8q5va"]
+
+[ext_resource type="Script" path="res://Scenes/campfire.gd" id="1_te4ht"]
+[ext_resource type="SpriteFrames" uid="uid://bi01ef0gwny67" path="res://Scenes/campfire.tres" id="2_l61h8"]
+[ext_resource type="Texture2D" uid="uid://8713ypy7dvyb" path="res://Scenes/light.tres" id="3_5nmi2"]
+[ext_resource type="Script" path="res://Scenes/Wood Collector.gd" id="5_4rs7u"]
+[ext_resource type="Theme" uid="uid://dfjxxhmug6bi2" path="res://Scenes/mytheme.tres" id="6_o8n85"]
+[ext_resource type="PackedScene" uid="uid://cyqyfdx5j8psk" path="res://shadow.tscn" id="84_hc43r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k8qm2"]
+radius = 37.0
+height = 200.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b55x5"]
+radius = 164.514
+
+[node name="Campfire" type="StaticBody2D"]
+collision_layer = 12
+collision_mask = 0
+script = ExtResource("1_te4ht")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -192)
+sprite_frames = ExtResource("2_l61h8")
+animation = &"fire"
+autoplay = "fire"
+frame_progress = 0.339686
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -7)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_k8qm2")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(23, -216)
+scale = Vector2(32.8872, 25.237)
+color = Color(1, 0.854902, 0.760784, 1)
+texture = ExtResource("3_5nmi2")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(23, -216)
+scale = Vector2(28.2469, 16.4672)
+color = Color(1, 0.615686, 0.345098, 1)
+range_item_cull_mask = 2
+texture = ExtResource("3_5nmi2")
+
+[node name="Shadow" parent="." instance=ExtResource("84_hc43r")]
+visible = false
+position = Vector2(-44, 13)
+scale = Vector2(16.4525, -6.2261)
+
+[node name="Wood Collector" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("5_4rs7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wood Collector"]
+shape = SubResource("CircleShape2D_b55x5")
+
+[node name="Label" type="Label" parent="Wood Collector"]
+visible = false
+offset_left = -196.0
+offset_top = -101.0
+offset_right = 208.0
+offset_bottom = 268.0
+theme = ExtResource("6_o8n85")
+text = "Press Interact (E) to throw fuel on the fire."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Wood Collector" to="Wood Collector" method="_on_body_entered"]
+[connection signal="body_exited" from="Wood Collector" to="Wood Collector" method="_on_body_exited"]

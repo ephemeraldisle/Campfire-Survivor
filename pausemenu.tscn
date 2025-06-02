@@ -1,0 +1,153 @@
+[gd_scene load_steps=7 format=3 uid="uid://1r7cvc5p2day"]
+
+[ext_resource type="Script" path="res://addons/maaacks_menus_template/base/scripts/CaptureFocus.gd" id="1_7en56"]
+[ext_resource type="Script" path="res://pausemenu.gd" id="1_8xc1b"]
+[ext_resource type="Theme" uid="uid://dfjxxhmug6bi2" path="res://Scenes/mytheme.tres" id="2_jdxvc"]
+[ext_resource type="PackedScene" uid="uid://bp8q7nal00jt4" path="res://menu stuff/scenes/Menus/OptionsMenu/MasterOptionsMenuWithTabs.tscn" id="2_mdwbf"]
+
+[sub_resource type="Gradient" id="Gradient_mivkd"]
+offsets = PackedFloat32Array(0, 0.984649, 1)
+colors = PackedColorArray(0.122252, 0.122252, 0.122252, 0.945098, 0.00241286, 0.00241286, 0.00241286, 0.998916, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ccl4o"]
+gradient = SubResource("Gradient_mivkd")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.551282)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 3
+script = ExtResource("1_8xc1b")
+options_scene = ExtResource("2_mdwbf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_ccl4o")
+
+[node name="MenuContainer2" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_jdxvc")
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 400
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_jdxvc")
+
+[node name="MenuMargin" type="PanelContainer" parent="MenuContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_jdxvc")
+
+[node name="MenuButtons" type="VBoxContainer" parent="MenuContainer2/VBoxContainer/MenuMargin"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+script = ExtResource("1_7en56")
+
+[node name="ResumeButton" type="Button" parent="MenuContainer2/VBoxContainer/MenuMargin/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Resume"
+
+[node name="Label" type="Label" parent="MenuContainer2/VBoxContainer/MenuMargin/MenuButtons/ResumeButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_jdxvc")
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsButton" type="Button" parent="MenuContainer2/VBoxContainer/MenuMargin/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Options"
+
+[node name="Label" type="Label" parent="MenuContainer2/VBoxContainer/MenuMargin/MenuButtons/OptionsButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_jdxvc")
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="MenuContainer2/VBoxContainer/MenuMargin/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit"
+
+[node name="Label" type="Label" parent="MenuContainer2/VBoxContainer/MenuMargin/MenuButtons/QuitButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_jdxvc")
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 99.0
+offset_top = 725.0
+offset_right = 139.0
+offset_bottom = 765.0
+theme = ExtResource("2_jdxvc")
+
+[node name="BackButton" type="Button" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -48.0
+offset_top = 76.0
+offset_right = -3.0
+offset_bottom = 107.0
+text = "Back"
+
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxyvf0gtcm15c"]
+
+[ext_resource type="Script" path="res://testing.gd" id="1_1i681"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbdcj"]
+radius = 159.18
+
+[node name="RockTest" type="ShapeCast2D"]
+position = Vector2(1101, 370)
+shape = SubResource("CircleShape2D_jbdcj")
+target_position = Vector2(0, 0)
+collision_mask = 4
+script = ExtResource("1_1i681")

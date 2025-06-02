@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cn72dms7ikua6"]
+
+[ext_resource type="Texture2D" uid="uid://ckv38sg8acxmi" path="res://menu stuff/panel-transparent-center-028.png" id="1_644eb"]
+
+[resource]
+texture = ExtResource("1_644eb")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 0, 48, 48)
+modulate_color = Color(1, 0.501961, 0.176471, 1)

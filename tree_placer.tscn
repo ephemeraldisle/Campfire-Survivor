@@ -1,0 +1,25 @@
+[gd_scene load_steps=13 format=3 uid="uid://c3v5s0gs64u42"]
+
+[ext_resource type="Script" path="res://tree_placer.gd" id="1_f0jco"]
+[ext_resource type="PackedScene" uid="uid://c2351fe0jky6x" path="res://Scenes/Environment/Trees/tree1.tscn" id="2_blsd6"]
+[ext_resource type="PackedScene" uid="uid://bbjt7feit5ros" path="res://Scenes/Environment/Trees/tree2.tscn" id="3_3asnd"]
+[ext_resource type="PackedScene" uid="uid://o7lyk0lr7n84" path="res://Scenes/Environment/Trees/tree3.tscn" id="4_0yfhp"]
+[ext_resource type="PackedScene" uid="uid://b8wmi167prq4f" path="res://Scenes/Environment/Trees/tree4.tscn" id="5_vx8vm"]
+[ext_resource type="PackedScene" uid="uid://baaqa8qh1u3cm" path="res://Scenes/Environment/Trees/tree5.tscn" id="6_rnc34"]
+[ext_resource type="PackedScene" uid="uid://bruv3jc5bqrkc" path="res://Scenes/Environment/Trees/tree6.tscn" id="7_b600t"]
+[ext_resource type="PackedScene" uid="uid://mmmliftf2cn1" path="res://Scenes/Environment/Trees/tree7.tscn" id="8_2pl2o"]
+[ext_resource type="PackedScene" uid="uid://btxngwabew3iu" path="res://Scenes/Environment/Trees/tree8.tscn" id="9_xc1ih"]
+[ext_resource type="PackedScene" uid="uid://bfhxhb2ovbk5g" path="res://Scenes/Environment/Trees/tree.tscn" id="10_kiyjq"]
+[ext_resource type="Texture2D" uid="uid://cofrtb5muupnx" path="res://Art/heat inner.png" id="11_kwiti"]
+[ext_resource type="PackedScene" uid="uid://dagr3audd8ef4" path="res://pickup_spawner.tscn" id="12_b6c83"]
+
+[node name="TreePlacer" type="Node2D"]
+script = ExtResource("1_f0jco")
+trees = Array[PackedScene]([ExtResource("2_blsd6"), ExtResource("3_3asnd"), ExtResource("4_0yfhp"), ExtResource("5_vx8vm"), ExtResource("6_rnc34"), ExtResource("7_b600t"), ExtResource("8_2pl2o"), ExtResource("9_xc1ih"), ExtResource("10_kiyjq")])
+
+[node name="HeatInner" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, 4)
+texture = ExtResource("11_kwiti")
+
+[node name="PickupSpawner" parent="." instance=ExtResource("12_b6c83")]

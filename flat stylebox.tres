@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ddle5l3mqia7s"]
+
+[ext_resource type="Texture2D" uid="uid://b0m445uin1o0v" path="res://Art/panel-border-028.png" id="1_vj74p"]
+
+[resource]
+texture = ExtResource("1_vj74p")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 0, 48, 48)

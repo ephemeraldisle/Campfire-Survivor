@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7tyteeewvg1t"]
+
+[ext_resource type="Script" path="res://Scripts/GlobalCamera.gd" id="1_d1t3e"]
+
+[node name="GlobalCamera" type="Camera2D"]
+enabled = false
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+script = ExtResource("1_d1t3e")

@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhebojylkjpar"]
+
+[ext_resource type="Script" path="res://Scripts/meta_menu.gd" id="1_1p4wr"]
+[ext_resource type="PackedScene" uid="uid://be6uqgp2f7yce" path="res://Scripts/meta_upgrade_card.tscn" id="1_colbs"]
+[ext_resource type="Theme" uid="uid://dfjxxhmug6bi2" path="res://Scenes/mytheme.tres" id="2_43s5e"]
+[ext_resource type="Resource" uid="uid://c1obcddmrchqh" path="res://upgrades/health_regeneration.tres" id="3_2c3qy"]
+[ext_resource type="Texture2D" uid="uid://ddmvm52y3it4s" path="res://Art/HUD/silly medal.png" id="5_jij3k"]
+
+[node name="MetaMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_1p4wr")
+upgrades = Array[Resource("res://upgrades/meta_upgrade.gd")]([ExtResource("3_2c3qy")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0392157, 0.0392157, 0.0392157, 0.992157)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_43s5e")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Permanent Upgrades"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+clip_contents = false
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 4
+vertical_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="MetaUpgradeCard" parent="MarginContainer/ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_colbs")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard2" parent="MarginContainer/ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_colbs")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard3" parent="MarginContainer/ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_colbs")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard4" parent="MarginContainer/ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_colbs")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard5" parent="MarginContainer/ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_colbs")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard6" parent="MarginContainer/ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_colbs")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard7" parent="MarginContainer/ScrollContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_colbs")]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 49
+theme_override_constants/v_separation = 49
+columns = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Back"
+
+[node name="CurrencyCounter" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"LabelVariant"
+text = "38732957"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+texture = ExtResource("5_jij3k")
+expand_mode = 3

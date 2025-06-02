@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp8q7nal00jt4"]
+
+[ext_resource type="PackedScene" uid="uid://d2xkw856fc6re" path="res://menu stuff/scenes/Menus/OptionsMenu/MasterOptionsMenu.tscn" id="1_cmigm"]
+[ext_resource type="Theme" uid="uid://dfjxxhmug6bi2" path="res://Scenes/mytheme.tres" id="2_aa3ua"]
+[ext_resource type="PackedScene" uid="uid://ghynymq3vofr" path="res://menu stuff/scenes/Menus/OptionsMenu/Input/InputOptionsMenu.tscn" id="2_rou3o"]
+[ext_resource type="PackedScene" uid="uid://b2jbvjmvgvpsy" path="res://menu stuff/scenes/Menus/OptionsMenu/Audio/AudioOptionsMenu.tscn" id="3_d4dx1"]
+[ext_resource type="PackedScene" uid="uid://c75d38x3jpang" path="res://menu stuff/scenes/Menus/OptionsMenu/Video/VideoOptionsMenu.tscn" id="4_3y41u"]
+
+[sub_resource type="Gradient" id="Gradient_poksa"]
+colors = PackedColorArray(0.122252, 0.122252, 0.122252, 0.945098, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4linp"]
+gradient = SubResource("Gradient_poksa")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.615385, 0.196581)
+
+[node name="MasterOptionsMenu" instance=ExtResource("1_cmigm")]
+theme = ExtResource("2_aa3ua")
+
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_4linp")
+
+[node name="MarginContainer" parent="." index="1"]
+mouse_filter = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="TabContainer" parent="MarginContainer" index="0"]
+custom_minimum_size = Vector2(800, 0)
+size_flags_horizontal = 4
+mouse_filter = 2
+theme = ExtResource("2_aa3ua")
+
+[node name="Controls" parent="MarginContainer/TabContainer" index="1" instance=ExtResource("2_rou3o")]
+layout_mode = 2
+
+[node name="Audio" parent="MarginContainer/TabContainer" index="2" instance=ExtResource("3_d4dx1")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Video" parent="MarginContainer/TabContainer" index="3" instance=ExtResource("4_3y41u")]
+visible = false
+layout_mode = 2
